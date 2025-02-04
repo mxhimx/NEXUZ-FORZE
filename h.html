@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Habit Tracker</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+        }
+        h1 {
+            margin-bottom: 20px;
+        }
+        table {
+            border-collapse: collapse;
+            width: 80%;
+            max-width: 600px;
+        }
+        th, td {
+            border: 1px solid #ccc;
+            padding: 10px;
+            text-align: center;
+        }
+        th {
+            background-color: #007bff;
+            color: white;
+        }
+        .completed {
+            background-color: #28a745;
+            color: white;
+            cursor: pointer;
+        }
+        .not-completed {
+            background-color: #dc3545;
+            color: white;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Habit Tracker</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Habit</th>
+                <th>Monday</th>
+                <th>Tuesday</th>
+                <th>Wednesday</th>
+                <th>Thursday</th>
+                <th>Friday</th>
+                <th>Saturday</th>
+                <th>Sunday</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Exercise</td>
+                <td class="not-completed" onclick="toggleStatus(this)"></td>
+                <td class="not-completed" onclick="toggleStatus(this)"></td>
+                <td class="not-completed" onclick="toggleStatus(this)"></td>
+                <td class="not-completed" onclick="toggleStatus(this)"></td>
+                <td class="not-completed" onclick="toggleStatus(this)"></td>
+                <td class="not-completed" onclick="toggleStatus(this)"></td>
+                <td class="not-completed" onclick="toggleStatus(this)"></td>
+            </tr>
+        </tbody>
+    </table>
+    <script>
+        function toggleStatus(cell) {
+            if (cell.classList.contains('not-completed')) {
+                cell.classList.remove('not-completed');
+                cell.classList.add('completed');
+                cell.innerText = '✔';
+            } else {
+                cell.classList.remove('completed');
+                cell.classList.add('not-completed');
+                cell.innerText = '';
+            }
+        }
+    </script>
+</body>
+</html>

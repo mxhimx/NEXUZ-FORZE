@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Study Planner with Prioritisation & Music Generator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+        }
+        h1 {
+            margin-bottom: 20px;
+        }
+        .task-list {
+            list-style: none;
+            padding: 0;
+        }
+        .task {
+            padding: 10px;
+            margin: 5px;
+            background: #007bff;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .task.high-priority {
+            background: #dc3545;
+        }
+        .task.medium-priority {
+            background: #ffc107;
+        }
+        .task.low-priority {
+            background: #28a745;
+        }
+        button {
+            margin-top: 20px;
+            padding: 10px;
+            border: none;
+            background: #007bff;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        audio {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Study Planner</h1>
+    <ul class="task-list">
+        <li class="task high-priority" onclick="togglePriority(this)">Finish Project</li>
+        <li class="task medium-priority" onclick="togglePriority(this)">Study for Exam</li>
+        <li class="task low-priority" onclick="togglePriority(this)">Exercise</li>
+    </ul>
+    <button onclick="generateMusic()">Generate Study Music</button>
+    <audio id="music" controls>
+        <source id="music-source" src="" type="audio/mp3">
+        Your browser does not support the audio element.
+    </audio>
+    <script>
+        function togglePriority(element) {
+            if (element.classList.contains('high-priority')) {
+                element.classList.remove('high-priority');
+                element.classList.add('medium-priority');
+            } else if (element.classList.contains('medium-priority')) {
+                element.classList.remove('medium-priority');
+                element.classList.add('low-priority');
+            } else {
+                element.classList.remove('low-priority');
+                element.classList.add('high-priority');
+            }
+        }
+
+        function generateMusic() {
+            const musicTracks = [
+                "https://www.bensound.com/bensound-music/bensound-creativeminds.mp3",
+                "https://www.bensound.com/bensound-music/bensound-sunny.mp3",
+                "https://www.bensound.com/bensound-music/bensound-energy.mp3"
+            ];
+            const randomTrack = musicTracks[Math.floor(Math.random() * musicTracks.length)];
+            document.getElementById("music-source").src = randomTrack;
+            document.getElementById("music").load();
+            document.getElementById("music").play();
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flashcards App</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+        }
+        .flashcard {
+            width: 300px;
+            height: 200px;
+            perspective: 1000px;
+            cursor: pointer;
+        }
+        .card {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            transform-style: preserve-3d;
+            transition: transform 0.6s;
+        }
+        .card.flipped {
+            transform: rotateY(180deg);
+        }
+        .card .side {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .front {
+            background: #ffcc00;
+        }
+        .back {
+            background: #007bff;
+            color: white;
+            transform: rotateY(180deg);
+        }
+    </style>
+</head>
+<body>
+    <div class="flashcard" onclick="flipCard()">
+        <div class="card" id="card">
+            <div class="side front">What is the capital of France?</div>
+            <div class="side back">Paris</div>
+        </div>
+    </div>
+    <script>
+        function flipCard() {
+            document.getElementById('card').classList.toggle('flipped');
+        }
+    </script>
+</body>
+</html>

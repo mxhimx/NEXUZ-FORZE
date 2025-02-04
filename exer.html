@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Study Planner with Exercise App</title>
+    <link rel="stylesheet" href="exer.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Study Planner with Exercise Breaks</h1>
+        <div class="streak-counter">
+            <p>Exercise Streak: <span id="streak">0</span> days</p>
+        </div>
+        <div class="study-timer">
+            <h2>Study Timer</h2>
+            <p>Time Remaining: <span id="timer">25:00</span></p>
+            <button id="startTimer">Start Study Session</button>
+            <button id="resetTimer">Reset Timer</button>
+        </div>
+        <div class="exercise-break">
+            <h2>Exercise Break</h2>
+            <p id="exercisePrompt">Take a break! Do: <span id="exercise">Stretching</span></p>
+            <button id="completeExercise">I Did It!</button>
+        </div>
+    </div>
+    <script src="exer.js"></script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Study Planner with Streaks</title>
+    <link rel="stylesheet" href="streaks.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Study Planner</h1>
+        <div class="streak-counter">
+            <p>Current Streak: <span id="streak">0</span> days</p>
+        </div>
+        <div class="task-list">
+            <h2>Tasks</h2>
+            <ul id="tasks">
+                <li><input type="checkbox" id="task1"> <label for="task1">Complete Math Assignment</label></li>
+                <li><input type="checkbox" id="task2"> <label for="task2">Read Chapter 3 of Biology</label></li>
+                <li><input type="checkbox" id="task3"> <label for="task3">Practice Coding Problems</label></li>
+            </ul>
+        </div>
+        <button id="resetStreak">Reset Streak</button>
+    </div>
+    <script src="streaks.js"></script>
+</body>
+</html>
