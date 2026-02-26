@@ -41,5 +41,4 @@ This project provides an organized platform for students to manage their studies
 
 ---
 
-This is a short and professional report. Let me know if you need modifications!
 
